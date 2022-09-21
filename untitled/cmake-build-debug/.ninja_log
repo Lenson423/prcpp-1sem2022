@@ -1,0 +1,9 @@
+# ninja log v5
+1	695	6840872158835810	CMakeFiles/untitled.dir/library.cpp.obj	6a27e45b5286c2c
+699	1017	6840872162059387	libuntitled.a	239abe1154e30d67
+3	703	6840881855298501	CMakeFiles/untitled.dir/library.cpp.obj	6a27e45b5286c2c
+704	850	6840881856765845	libuntitled.a	239abe1154e30d67
+4	1103	6840883897635726	CMakeFiles/untitled.dir/library.cpp.obj	6a27e45b5286c2c
+1104	1306	6840883899673104	libuntitled.a	239abe1154e30d67
+3	771	6840884263482981	CMakeFiles/untitled.dir/library.cpp.obj	6a27e45b5286c2c
+772	958	6840884265350109	libuntitled.a	239abe1154e30d67
