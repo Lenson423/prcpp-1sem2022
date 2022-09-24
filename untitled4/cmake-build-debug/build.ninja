@@ -172,6 +172,72 @@ build untitled7.exe: CXX_EXECUTABLE_LINKER__untitled7_Debug CMakeFiles/untitled7
   TARGET_IMPLIB = libuntitled7.dll.a
   TARGET_PDB = untitled7.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target untitled8
+
+
+#############################################
+# Order-only phony target for untitled8
+
+build cmake_object_order_depends_target_untitled8: phony || CMakeFiles/untitled8.dir
+
+build CMakeFiles/untitled8.dir/1_TV_programe.cpp.obj: CXX_COMPILER__untitled8_Debug C$:/Users/lenso/CLionProjects/untitled4/1_TV_programe.cpp || cmake_object_order_depends_target_untitled8
+  DEP_FILE = CMakeFiles\untitled8.dir\1_TV_programe.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\untitled8.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled8.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target untitled8
+
+
+#############################################
+# Link the executable untitled8.exe
+
+build untitled8.exe: CXX_EXECUTABLE_LINKER__untitled8_Debug CMakeFiles/untitled8.dir/1_TV_programe.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\untitled8.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = untitled8.exe
+  TARGET_IMPLIB = libuntitled8.dll.a
+  TARGET_PDB = untitled8.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target untitled9
+
+
+#############################################
+# Order-only phony target for untitled9
+
+build cmake_object_order_depends_target_untitled9: phony || CMakeFiles/untitled9.dir
+
+build CMakeFiles/untitled9.dir/5_east_calendar.cpp.obj: CXX_COMPILER__untitled9_Debug C$:/Users/lenso/CLionProjects/untitled4/5_east_calendar.cpp || cmake_object_order_depends_target_untitled9
+  DEP_FILE = CMakeFiles\untitled9.dir\5_east_calendar.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\untitled9.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled9.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target untitled9
+
+
+#############################################
+# Link the executable untitled9.exe
+
+build untitled9.exe: CXX_EXECUTABLE_LINKER__untitled9_Debug CMakeFiles/untitled9.dir/5_east_calendar.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\untitled9.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = untitled9.exe
+  TARGET_IMPLIB = libuntitled9.dll.a
+  TARGET_PDB = untitled9.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -206,6 +272,10 @@ build untitled6: phony untitled6.exe
 
 build untitled7: phony untitled7.exe
 
+build untitled8: phony untitled8.exe
+
+build untitled9: phony untitled9.exe
+
 # =============================================================================
 # Folder targets.
 
@@ -214,7 +284,7 @@ build untitled7: phony untitled7.exe
 #############################################
 # Folder: C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug
 
-build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe
+build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe untitled8.exe untitled9.exe
 
 # =============================================================================
 # Built-in targets

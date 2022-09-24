@@ -2,5 +2,7 @@ C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled4.di
 C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled5.dir
 C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled6.dir
 C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled7.dir
+C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled8.dir
+C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/untitled9.dir
 C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/edit_cache.dir
 C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug/CMakeFiles/rebuild_cache.dir
