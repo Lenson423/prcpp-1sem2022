@@ -238,6 +238,39 @@ build untitled9.exe: CXX_EXECUTABLE_LINKER__untitled9_Debug CMakeFiles/untitled9
   TARGET_IMPLIB = libuntitled9.dll.a
   TARGET_PDB = untitled9.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target untitled10
+
+
+#############################################
+# Order-only phony target for untitled10
+
+build cmake_object_order_depends_target_untitled10: phony || CMakeFiles/untitled10.dir
+
+build CMakeFiles/untitled10.dir/3_circles.cpp.obj: CXX_COMPILER__untitled10_Debug C$:/Users/lenso/CLionProjects/untitled4/3_circles.cpp || cmake_object_order_depends_target_untitled10
+  DEP_FILE = CMakeFiles\untitled10.dir\3_circles.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\untitled10.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled10.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target untitled10
+
+
+#############################################
+# Link the executable untitled10.exe
+
+build untitled10.exe: CXX_EXECUTABLE_LINKER__untitled10_Debug CMakeFiles/untitled10.dir/3_circles.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\untitled10.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = untitled10.exe
+  TARGET_IMPLIB = libuntitled10.dll.a
+  TARGET_PDB = untitled10.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -264,6 +297,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 # =============================================================================
 # Target aliases.
 
+build untitled10: phony untitled10.exe
+
 build untitled4: phony untitled4.exe
 
 build untitled5: phony untitled5.exe
@@ -284,7 +319,7 @@ build untitled9: phony untitled9.exe
 #############################################
 # Folder: C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug
 
-build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe untitled8.exe untitled9.exe
+build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe untitled8.exe untitled9.exe untitled10.exe
 
 # =============================================================================
 # Built-in targets
