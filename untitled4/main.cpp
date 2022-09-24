@@ -5,14 +5,14 @@ using std::cout, std::cin, std::endl;
 
 int main() {
     SetConsoleOutputCP(CP_UTF8);
-    cout << "Последовательно введите номера года, месяца и дня:" << endl;
-    unsigned int year, month, day;
-    cin >> year >> month >> day;
+    cout << "Последовательно введите номера текущих дня, месяца и года:" << endl;
+    unsigned int day, month, year;
+    cin >> day >> month >> year;
     if (month == 1 and day == 1){
         year -= 1;
         month = 12;
         day = 31;
-    }else if (day = 1){
+    }else if (day == 1){
         month -= 1;
         switch (month) {
             case 1:
