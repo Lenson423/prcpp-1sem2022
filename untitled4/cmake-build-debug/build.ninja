@@ -148,8 +148,8 @@ build untitled6.exe: CXX_EXECUTABLE_LINKER__untitled6_Debug CMakeFiles/untitled6
 
 build cmake_object_order_depends_target_untitled7: phony || CMakeFiles/untitled7.dir
 
-build CMakeFiles/untitled7.dir/6_yesterday.cpp.obj: CXX_COMPILER__untitled7_Debug C$:/Users/lenso/CLionProjects/untitled4/6_yesterday.cpp || cmake_object_order_depends_target_untitled7
-  DEP_FILE = CMakeFiles\untitled7.dir\6_yesterday.cpp.obj.d
+build CMakeFiles/untitled7.dir/6_yesterday(with_functions).cpp.obj: CXX_COMPILER__untitled7_Debug C$:/Users/lenso/CLionProjects/untitled4/6_yesterday(with$ functions).cpp || cmake_object_order_depends_target_untitled7
+  DEP_FILE = CMakeFiles\untitled7.dir\6_yesterday(with_functions).cpp.obj.d
   FLAGS = -g
   OBJECT_DIR = CMakeFiles\untitled7.dir
   OBJECT_FILE_DIR = CMakeFiles\untitled7.dir
@@ -162,7 +162,7 @@ build CMakeFiles/untitled7.dir/6_yesterday.cpp.obj: CXX_COMPILER__untitled7_Debu
 #############################################
 # Link the executable untitled7.exe
 
-build untitled7.exe: CXX_EXECUTABLE_LINKER__untitled7_Debug CMakeFiles/untitled7.dir/6_yesterday.cpp.obj
+build untitled7.exe: CXX_EXECUTABLE_LINKER__untitled7_Debug CMakeFiles/untitled7.dir/6_yesterday(with_functions).cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\untitled7.dir
@@ -271,6 +271,39 @@ build untitled10.exe: CXX_EXECUTABLE_LINKER__untitled10_Debug CMakeFiles/untitle
   TARGET_IMPLIB = libuntitled10.dll.a
   TARGET_PDB = untitled10.exe.dbg
 
+# =============================================================================
+# Object build statements for EXECUTABLE target untitled11
+
+
+#############################################
+# Order-only phony target for untitled11
+
+build cmake_object_order_depends_target_untitled11: phony || CMakeFiles/untitled11.dir
+
+build CMakeFiles/untitled11.dir/6_yesterday.cpp.obj: CXX_COMPILER__untitled11_Debug C$:/Users/lenso/CLionProjects/untitled4/6_yesterday.cpp || cmake_object_order_depends_target_untitled11
+  DEP_FILE = CMakeFiles\untitled11.dir\6_yesterday.cpp.obj.d
+  FLAGS = -g
+  OBJECT_DIR = CMakeFiles\untitled11.dir
+  OBJECT_FILE_DIR = CMakeFiles\untitled11.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target untitled11
+
+
+#############################################
+# Link the executable untitled11.exe
+
+build untitled11.exe: CXX_EXECUTABLE_LINKER__untitled11_Debug CMakeFiles/untitled11.dir/6_yesterday.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = CMakeFiles\untitled11.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = untitled11.exe
+  TARGET_IMPLIB = libuntitled11.dll.a
+  TARGET_PDB = untitled11.exe.dbg
+
 
 #############################################
 # Utility command for edit_cache
@@ -299,6 +332,8 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 build untitled10: phony untitled10.exe
 
+build untitled11: phony untitled11.exe
+
 build untitled4: phony untitled4.exe
 
 build untitled5: phony untitled5.exe
@@ -319,7 +354,7 @@ build untitled9: phony untitled9.exe
 #############################################
 # Folder: C:/Users/lenso/CLionProjects/untitled4/cmake-build-debug
 
-build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe untitled8.exe untitled9.exe untitled10.exe
+build all: phony untitled4.exe untitled5.exe untitled6.exe untitled7.exe untitled8.exe untitled9.exe untitled10.exe untitled11.exe
 
 # =============================================================================
 # Built-in targets
