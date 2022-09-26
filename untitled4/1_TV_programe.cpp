@@ -44,7 +44,6 @@ int main() {
         return 0;
     }
 
-
     unsigned int startTime1 = startTimeH1 * 60 + startTimeM1;
     unsigned int startTime2 = startTimeH2 * 60 + startTimeM2;
     unsigned int startTime3 = startTimeH3 * 60 + startTimeM3;
