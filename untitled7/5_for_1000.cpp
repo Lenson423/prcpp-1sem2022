@@ -6,7 +6,7 @@
 
 using std::cout, std::cin, std::endl, std::string, std::getline;
 
-int main() { // треугольник серпинского для 1024
+int main() { // треугольник серпинского для 2^n(1024)
     int n = 1024;
     for (int y = n - 1; y >= 0; y--) {
         for (int i = 0; i < y; i++) {
