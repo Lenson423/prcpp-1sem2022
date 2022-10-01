@@ -11,8 +11,8 @@ int main() {
     cout << "Введите n:" << endl;
     unsigned int n;
     cin >> n;
-    for (unsigned int i = n; i > 0;){
-        cout << --i << " ";
+    for (unsigned int i = n; --i + 1 > 0; ){
+        cout << i << " ";
     }
     return 0;
 }
