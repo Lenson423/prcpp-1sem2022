@@ -33,6 +33,21 @@ int main() {
             }
         }
     }
-    cout << res * 4 + 1;
+    cout << res * 4 + 1 << endl;
+
+    // O(n)
+    int result1 = 0;
+    int counter = radius * radius;
+    for (int i = 1; i <= counter; i += 4){
+        result1 += counter / i;
+        result1 -= counter / (i + 2);
+    }
+    result1 = 4 * result1 + 1;
+    if (result1 == 1){
+        cout << "1 точка" << endl;
+    }else {
+        cout << result << " точек"<< endl;
+    }
+
     return 0;
 }

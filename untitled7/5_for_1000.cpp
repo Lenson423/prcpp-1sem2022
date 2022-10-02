@@ -3,10 +3,13 @@
 //
 #include <iostream>
 #include <cmath>
+#include "windows.h"
 
 using std::cout, std::cin, std::endl, std::string, std::getline;
 
 int main() {
+    SetConsoleOutputCP(CP_UTF8);
+    cout << "Введите n:" << endl;
     int n = 64;
     cin >> n;
     if ((n & (n - 1)) == 0) { //цифры треугольника серпинского для 2^k (1024)
