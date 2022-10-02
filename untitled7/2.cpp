@@ -12,6 +12,11 @@ int main() {
     unsigned long int number;
     cin >> number;
 
+    if (number <= 0) {
+        cout << "Последовательность никогда не достигнет 1";
+        return 0;
+    }
+
     if (number == 1){
         cout << "Последовательность начинается с единицы.";
         return 0;

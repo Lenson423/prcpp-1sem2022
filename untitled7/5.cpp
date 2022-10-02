@@ -9,9 +9,9 @@ using std::cout, std::cin, std::endl, std::string, std::getline;
 int main() {
     SetConsoleOutputCP(CP_UTF8);
     int count = 0;
-    for (long long j = 1; count <= 63;j = (j xor (2*j))) { //Это будет треугольник Серпинского для n = 63
+    for (unsigned long long j = 1; count <= 64 ;j = (j xor (2*j))) { //Числа в 2-ом представлении треугольника Серпинского для n = 64
         string result;
-        long long k = j;
+        unsigned long long k = j;
         while (k > 0) {
             int digit;
             digit = k % 2;
@@ -24,7 +24,7 @@ int main() {
     }
 
     int count1 = 0;
-    for (long long j = 1; count1 < 63;j = (j xor (2*j))) { //Это будет треугольник Серпинского для n = 63
+    for (unsigned long long j = 1; count1 < 64;j = (j xor (2*j))) { //Числа в 10-ом представлении треугольника Серпинского для n = 64
         cout << j << endl;
         ++count1;
         }
