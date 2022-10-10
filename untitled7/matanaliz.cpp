@@ -9,8 +9,13 @@
 using namespace std;
 
 int main() {
-   for (int n = 1; n <= 128; n ++){
-       cout << n << " : " << ((n & (n - 1)) == 0) << endl;
-   }
-    return 0;
+
+    int m = 8676330;
+    cin >> m;
+
+    int secondToday = m % 86400;
+    int countHours = secondToday / 3600;
+    int countMinuts = (secondToday - countHours*3600)/60;
+    int countSeconds = secondToday - countHours*3600  - countMinuts * 60;
+    cout << countHours / 10 << countHours % 10 << ":" << countMinuts / 10 << countMinuts % 10<< ":" << countSeconds / 10 << countSeconds % 10;
 }
