@@ -55,13 +55,12 @@ std::vector<int> testVector5 = {};
 std::vector<int> testVector6 = {};
 std::vector<int> testVector7 = {1, 2, 5, 7, 3, 4, 6};
 std::vector<std::vector<int>> testVector8 = {
-        {1, 2},
-        {3, 4}
+        {1, 0, 2}
 };
 std::vector<std::vector<int>> testVector9 = {
-        {2},
-        {4},
-        {1}
+        {2, 1},
+        {11, 5},
+        {1, 1},
 };
 std::vector<int> testVector10 = {1, 2, 6, 9, 34, 62, 65};
 std::vector<int> testVector11 = {1, 3, 6, 8, 12, 62, 110};
@@ -69,11 +68,11 @@ int main() {
     //testTask8(testVector8, testVector9);
     //testTask7(testVector7);
     //testTask6(testVector5, -1);
-    testTask5(testVector7);
+    //testTask5(testVector7);
     //testTask4(testVector10, testVector6);
     //testTask3(testVector1);
     //testTask2(testVector7);
     //testTask1();
-    //multiplyMatrices(testVector8, testVector8);
+    multiplyMatrices(testVector8, testVector9);
     return 0;
 }
