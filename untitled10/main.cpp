@@ -1,13 +1,16 @@
 #include <iostream>
-#include "vector"
 #include <cassert>
 
-using std::cout, std::cin, std::endl, std::max, std::vector, std::string;
+using std::cout, std::cin, std::endl, std::max, std::string;
 
-const double EPSILON = 0.000'001;
+const double EPSILON = 0.000'000'001;
 
 bool doubleIsEqual(double a, double b) {
     return abs(a - b) <= EPSILON;
+}
+
+bool doubleLessZero(double &a) {
+    return (a + EPSILON <= 0);
 }
 
 double sum(const double &a, const double &b);
@@ -20,7 +23,7 @@ double division(const double &a, const double &b);
 
 int mod(const int &a, const int &b);
 
-double negate(double a);
+double negate(double &);
 
 static double exponent(const double &a);
 
@@ -29,6 +32,14 @@ unsigned long long factorial(unsigned long long);
 double sin(double &);
 
 double cos(double &);
+
+double absoluteValue(double &);
+
+double multiplicativeInverse(double &);
+
+double square(double &);
+
+double naturalLogarithm(double &);
 
 void testSum();
 
@@ -44,12 +55,17 @@ enum Operation {
     Exp,
     Factorial,
     Sin,
-    Cos
+    Cos,
+    AbsoluteValue,
+    MultiplicativeInverse,
+    Square,
+    NaturalLogarithm,
 };
 
 Operation askForOperation() {
     string menu = "sum - 0,\n neg - 1,\n mult - 2,\n division - 3,\n mod - 4,\n negate - 100,\n exp - 101,"
-                  "\n factorial - 102,\n sin - 103,\n cos - 104";
+                  "\n factorial - 102,\n sin - 103,\n cos - 104,\n absolute value - 105,\n multiplicative inverse - 106,"
+                  "\n square - 107,\n natural logarithm - 108,";
     int numberOfOperation;
     cout << menu << endl;
     cout << "Operation: ";
@@ -137,7 +153,19 @@ bool checkValueOfTheVariables(Operation operation, double &x) {
     switch (operation) {
         case Factorial:
             if (x < 0) {
-                cout << "Factorail of a negative number!!!" << endl;
+                cout << "Factorial of a negative number!!!" << endl;
+                return false;
+            }
+            break;
+        case MultiplicativeInverse:
+            if (doubleIsEqual(x, EPSILON)) {
+                cout << "Reciprocal of a 0!!!" << endl;
+                return false;
+            }
+            break;
+        case NaturalLogarithm:
+            if (doubleLessZero(x)) {
+                cout << "Natural logarithm of negative number or 0!!!" << endl;
                 return false;
             }
             break;
@@ -162,7 +190,7 @@ bool checkValueOfTheVariables(Operation operation, double &a, double &b) {
 }
 
 double applyUnaryOperation(Operation operation, double x) {
-    double result;
+    double result = 0; // Do something with it for factorial and MultiplacativeInverse
     switch (operation) {
         case Negate:
             result = negate(x);
@@ -181,6 +209,20 @@ double applyUnaryOperation(Operation operation, double x) {
         case Cos:
             result = cos(x);
             break;
+        case AbsoluteValue:
+            result = absoluteValue(x);
+            break;
+        case MultiplicativeInverse:
+            if (checkValueOfTheVariables(operation, x)) {
+                result = multiplicativeInverse(x);
+            }
+        case Square:
+            result = square(x);
+            break;
+        case NaturalLogarithm:
+            if (checkValueOfTheVariables(operation, x)) {
+                result = naturalLogarithm(x);
+            }
         default:
             break;
     }
@@ -188,7 +230,7 @@ double applyUnaryOperation(Operation operation, double x) {
 }
 
 double applyBinaryOperation(Operation operation, double a, double b) {
-    double result;
+    double result = 0; // Do something with it for division
     switch (operation) {
         case Sum :
             result = sum(a, b);
@@ -217,14 +259,6 @@ int sum(const int &a, const int &b) {
     return a + b;
 }
 
-int sub(const int &a, const int &b) {
-    return a - b;
-}
-
-int mul(const int &a, const int &b) {
-    return a * b;
-}
-
 int division(const int &a, const int &b) {
     return a / b;
 }
@@ -249,8 +283,20 @@ int mod(const int &a, const int &b) {
     return a % b;
 }
 
-double negate(double a) {
+double negate(double &a) {
     return -a;
+}
+
+double absoluteValue(double &a) {
+    return abs(a);
+}
+
+double multiplicativeInverse(double &a) {
+    return 1 / a;
+}
+
+double square(double &a) {
+    return a * a;
 }
 
 unsigned long long factorial(unsigned long long a) {
@@ -299,7 +345,23 @@ static double exponent(const double &a) {
     return result;
 }
 
-//test
+double naturalLogarithm(double &a) {
+    double z = (a - 1) / (1 + a);
+    double zSquare = z * z;
+    double tmp = z;
+    double result = tmp;
+    int i = 3;
+    while (!doubleIsEqual(tmp, EPSILON)) {
+        tmp = tmp * zSquare / i * (i - 2);
+        result += tmp;
+        i += 2;
+    }
+    result *= 2;
+    return result;
+}
+
+
+//test-cases
 void testSum() {
     assert(sum(0, 0) == 0 && "sum of 0 should be 0");
     assert(sum(0, 1) == 1 && "sum 0 and Number should be Number");
