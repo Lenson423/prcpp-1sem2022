@@ -11,14 +11,6 @@ bool doubleIsEqual(double a, double b) {
     return abs(a - b) <= EPSILON;
 }
 
-int sum(const int &a, const int &b);
-
-int sub(const int &a, const int &b);
-
-int mul(const int &a, const int &b);
-
-int division(const int &a, const int &b);
-
 double sum(const double &a, const double &b);
 
 double sub(const double &a, const double &b);
@@ -59,9 +51,12 @@ Operation askForOperation() {
     return (Operation) numberOfOperation;
 }
 
+bool checkValueOfTheVariables(Operation operation, double &);
+
+bool checkValueOfTheVariables(Operation operation, double &, double &);
+
 void askForNumber(double &);
 
-void askForNumber(int &);
 
 bool isUnary(Operation);
 
@@ -120,10 +115,6 @@ int main() {
     return 0;
 }
 
-void askForNumber(int &arg) {
-    cout << "Input the number";
-    cin >> arg;
-}
 
 void askForNumber(double &arg) {
     cout << "Input the number: " << endl;
@@ -132,6 +123,34 @@ void askForNumber(double &arg) {
 
 bool isUnary(Operation operation) {
     return operation > 99 ? true : false;
+}
+
+bool checkValueOfTheVariables(Operation operation, double &x) {
+    switch (operation) {
+        case Factorial:
+            if (x < 0) {
+                cout << "Factorail of a negative number!!!" << endl;
+                return false;
+            }
+            break;
+        default:
+            break;
+    }
+    return true;
+}
+
+bool checkValueOfTheVariables(Operation operation, double &a, double &b) {
+    switch (operation) {
+        case Division:
+            if (doubleIsEqual(b, EPSILON)) {
+                cout << "You can't divide by 0" << endl;
+                return false;
+            }
+            break;
+        default:
+            break;
+    }
+    return true;
 }
 
 double applyUnaryOperation(Operation operation, double x) {
@@ -144,7 +163,10 @@ double applyUnaryOperation(Operation operation, double x) {
             result = exponent(x);
             break;
         case Factorial: // Do something with type of the function
-            return factorial(x);
+            if (checkValueOfTheVariables(operation, x)) {
+                return factorial(x);
+            }
+            break;
         default:
             break;
     }
@@ -164,7 +186,9 @@ double applyBinaryOperation(Operation operation, double a, double b) {
             result = mul(a, b);
             break;
         case Division :
-            result = division(a, b);
+            if (checkValueOfTheVariables(operation, a, b)) {
+                result = division(a, b);
+            }
             break;
         case Mod :
             result = mod(a, b);
