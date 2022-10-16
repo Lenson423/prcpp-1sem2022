@@ -1,11 +1,10 @@
 #include <iostream>
-#include "cmath"
 #include "vector"
 #include <cassert>
 
 using std::cout, std::cin, std::endl, std::max, std::vector, std::string;
 
-const double EPSILON = pow(10, -6);
+const double EPSILON = 0.000'001;
 
 bool doubleIsEqual(double a, double b) {
     return abs(a - b) <= EPSILON;
@@ -27,6 +26,10 @@ static double exponent(const double &a);
 
 unsigned long long factorial(unsigned long long);
 
+double sin(double &);
+
+double cos(double &);
+
 void testSum();
 
 void testFactorial();
@@ -40,10 +43,13 @@ enum Operation {
     Negate = 100, // Unary oporations starts from 100, Binary from 0
     Exp,
     Factorial,
+    Sin,
+    Cos
 };
 
 Operation askForOperation() {
-    string menu = "sum - 0,\n neg - 1,\n mult - 2,\n division - 3,\n mod - 4,\n negate - 100,\n exp - 101,\n factorial - 102";
+    string menu = "sum - 0,\n neg - 1,\n mult - 2,\n division - 3,\n mod - 4,\n negate - 100,\n exp - 101,"
+                  "\n factorial - 102,\n sin - 103,\n cos - 104";
     int numberOfOperation;
     cout << menu << endl;
     cout << "Operation: ";
@@ -111,7 +117,7 @@ int main() {
                 cout << result << endl;
             }
         }
-        if (varType == "exit"){
+        if (varType == "exit") {
             return 0;
         }
     }
@@ -168,6 +174,12 @@ double applyUnaryOperation(Operation operation, double x) {
             if (checkValueOfTheVariables(operation, x)) {
                 return factorial(x);
             }
+            break;
+        case Sin:
+            result = sin(x);
+            break;
+        case Cos:
+            result = cos(x);
             break;
         default:
             break;
@@ -243,6 +255,36 @@ double negate(double a) {
 
 unsigned long long factorial(unsigned long long a) {
     return (a > 1) ? a * factorial(a - 1) : 1;
+}
+
+double sin(double &a) {
+    int i = 1;
+    double tmp1 = a;
+    double tmp2 = a * a * a / 6;
+    double result = tmp1 - tmp2;
+    double aPow4 = a * a * a * a;
+    while (!doubleIsEqual(abs(tmp1 - tmp2), EPSILON)) {
+        tmp1 = tmp1 / (i * (i * (i * (i + 10) + 35) + 50) + 24) * aPow4;
+        tmp2 = tmp2 / (i * (i * (i * (i + 18) + 119) + 342) + 360) * aPow4;
+        result += (tmp1 - tmp2);
+        i += 4;
+    }
+    return result;
+}
+
+double cos(double &a) {
+    int i = 1;
+    double tmp1 = 1;
+    double tmp2 = a * a / 2;
+    double result = tmp1 - tmp2;
+    double aPow4 = a * a * a * a;
+    while (!doubleIsEqual(abs(tmp1 - tmp2), EPSILON)) {
+        tmp1 = tmp1 / (i * (i * (i * (i + 6) + 11) + 6)) * aPow4;
+        tmp2 = tmp2 / (i * (i * (i * (i + 14) + 71) + 154) + 120) * aPow4;
+        result += (tmp1 - tmp2);
+        i += 4;
+    }
+    return result;
 }
 
 static double exponent(const double &a) {
