@@ -75,7 +75,7 @@ int main() {
 
     string varType;
     while (true) {
-        cout << "Type:" << endl;
+        cout << "Type or exit (to terminate proces):" << endl;
         cin >> varType;
         if (varType == "int") {
             Operation operation = askForOperation();
@@ -111,8 +111,10 @@ int main() {
                 cout << result << endl;
             }
         }
+        if (varType == "exit"){
+            return 0;
+        }
     }
-    return 0;
 }
 
 
